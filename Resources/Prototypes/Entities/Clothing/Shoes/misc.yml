@@ -161,12 +161,12 @@
   description: High-tech boots woven with quantum fibers and no-slip technology, uses a tiny nuclear reactor to generate pure speed!
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/Boots/speedboots.rsi
+    sprite: Clothing/Shoes/Boots/advspeedboots.rsi
     layers:
     - state: icon
       map: [ "enum.ToggleableVisuals.Layer" ]
   - type: Clothing
-    sprite: Clothing/Shoes/Boots/speedboots.rsi
+    sprite: Clothing/Shoes/Boots/advspeedboots.rsi
   - type: ToggleClothing
     action: ActionToggleSpeedBoots
   - type: ClothingSpeedModifier
