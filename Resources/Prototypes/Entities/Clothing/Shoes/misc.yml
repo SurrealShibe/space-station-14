@@ -155,6 +155,37 @@
     tags: []
 
 - type: entity
+  parent: [ClothingShoesBase, BaseToggleClothing]
+  id: ClothingShoesBootsAdvancedSpeed
+  name: advanced speed boots
+  description: High-tech boots woven with quantum fibers and no-slip technology, uses a tiny nuclear reactor to generate pure speed!
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/speedbootsadvanced.rsi
+    layers:
+    - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/speedbootsadvanced.rsi
+  - type: ToggleClothing
+    action: ActionToggleSpeedBoots
+  - type: ClothingSpeedModifier
+    walkModifier: 1.5
+    sprintModifier: 1.5
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: {state: icon-on}
+          False: {state: icon}
+  - type: StaticPrice
+    price: 500
+  - type: NoSlip
+  - type: Tag
+    tags: []
+
+- type: entity
   parent: BaseAction
   id: ActionToggleSpeedBoots
   name: Toggle Speed Boots
@@ -182,7 +213,7 @@
     price: 75
   - type: Tag
     tags: [ ]
-   
+
 - type: entity
   parent: ClothingShoesBase
   id: ClothingShoesBootsJump
@@ -200,7 +231,7 @@
     jumpSound: /Audio/Effects/stealthoff.ogg
   - type: ActionGrant
     actions:
-    - ActionGravityJump 
+    - ActionGravityJump
   - type: ItemActionGrant
     actions:
     - ActionGravityJump
