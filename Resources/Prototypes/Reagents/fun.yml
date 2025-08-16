@@ -418,3 +418,46 @@
         conditions:
         - !type:ReagentThreshold
           min: 50
+
+- type: reagent
+  id: Slippizine
+  name: reagent-name-slippizine
+  desc: reagent-desc-space-lube
+  evaporationSpeed: 0.1
+  slipData:
+    requiredSlipSpeed: 1
+    superSlippery: true
+  metabolisms:
+    Poison:
+#      effects:
+#        - !type:Slipify
+#          slipData:
+#            knockdownTime: 3
+#            launchForwardsMultiplier: 3
+#          conditions:
+#          - !type:ReagentThreshold
+#            min: 1
+      effects:
+      - !type:GenericStatusEffect
+        key: Slippery
+        component: Slippery
+        slipData:
+          requiredSlipSpeed: 1
+          superSlippery: true
+        type: Add
+        time: 4
+      - !type:GenericStatusEffect
+        key: StepTrigger
+        component: StepTrigger
+        requiredTriggeredSpeed: -1
+        type: Add
+        time: 4
+  physicalDesc: reagent-physical-desc-shiny
+  flavor: funny
+  color: "#77b58e"
+  recognizable: true
+  boilingPoint: 290.0 # Glycerin
+  meltingPoint: 18.2
+  tileReactions:
+  - !type:SpillTileReaction
+  friction: 0.05
